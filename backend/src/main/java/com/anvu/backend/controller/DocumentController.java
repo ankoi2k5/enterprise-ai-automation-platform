@@ -1,7 +1,10 @@
 package com.anvu.backend.controller;
 
 import com.anvu.backend.entity.Document;
+import com.anvu.backend.entity.DocumentChunk;
+import com.anvu.backend.repository.DocumentChunkRepository;
 import com.anvu.backend.repository.DocumentRepository;
+import com.anvu.backend.service.EmbeddingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,10 +23,15 @@ import java.util.Map;
 public class DocumentController {
 
     private final DocumentRepository documentRepository;
+    private final DocumentChunkRepository chunkRepository;
+    private final EmbeddingService embeddingService;
     private final String uploadDir = "uploads/";
+    private static final int CHUNK_SIZE = 500;
 
-    public DocumentController(DocumentRepository documentRepository) {
+    public DocumentController(DocumentRepository documentRepository, DocumentChunkRepository chunkRepository, EmbeddingService embeddingService) {
         this.documentRepository = documentRepository;
+        this.chunkRepository = chunkRepository;
+        this.embeddingService = embeddingService;
     }
 
     @PostMapping("/upload")
@@ -49,10 +58,29 @@ public class DocumentController {
             doc.setContent(content);
             documentRepository.save(doc);
 
-            return ResponseEntity.ok(Map.of("message", "Upload thanh cong", "id", doc.getId()));
+            // Chia nho thanh chunk va tao embedding cho tung chunk
+            List<String> chunks = splitIntoChunks(content, CHUNK_SIZE);
+            for (String chunkText : chunks) {
+                List<Double> vector = embeddingService.embed(chunkText);
+                DocumentChunk chunk = new DocumentChunk();
+                chunk.setDocumentId(doc.getId());
+                chunk.setContent(chunkText);
+                chunk.setEmbedding(embeddingService.toStorableString(vector));
+                chunkRepository.save(chunk);
+            }
+
+            return ResponseEntity.ok(Map.of("message", "Upload va xu ly thanh cong", "id", doc.getId(), "soChunk", chunks.size()));
         } catch (IOException e) {
             return ResponseEntity.internalServerError().body(Map.of("message", "Loi upload: " + e.getMessage()));
         }
+    }
+
+    private List<String> splitIntoChunks(String text, int size) {
+        List<String> chunks = new ArrayList<>();
+        for (int i = 0; i < text.length(); i += size) {
+            chunks.add(text.substring(i, Math.min(text.length(), i + size)));
+        }
+        return chunks;
     }
 
     @GetMapping
