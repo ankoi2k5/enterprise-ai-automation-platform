@@ -7,3 +7,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+gemini:
+  api-key: ${GEMINI_API_KEY}
+  api-url: https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent
