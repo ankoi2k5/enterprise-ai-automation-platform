@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import api from '../api'
+import { useNavigate } from 'react-router-dom'
 
 interface User {
     id: number
@@ -13,7 +14,7 @@ function Users() {
     const fullName = localStorage.getItem('fullName')
     const role = localStorage.getItem('role')
     const isAdmin = role === 'ADMIN'
-
+    const navigate = useNavigate()
     const loadUsers = () => {
         api.get('/users')
             .then((res) => setUsers(res.data))
@@ -45,9 +46,14 @@ function Users() {
                 <h1 className="text-2xl font-bold">
                     Xin chao, {fullName} <span className="text-sm text-gray-500">({role})</span>
                 </h1>
-                <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded">
-                    Dang xuat
-                </button>
+                <div className="flex gap-2">
+                    <button onClick={() => navigate('/chat')} className="bg-green-600 text-white px-4 py-2 rounded">
+                        Chat AI
+                    </button>
+                    <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded">
+                        Dang xuat
+                    </button>
+                </div>
             </div>
             <h2 className="text-lg font-semibold mb-2">Danh sach Users</h2>
             <table className="w-full border-collapse">
