@@ -28,4 +28,9 @@ public class User {
     public void setFullName(String fullName) { this.fullName = fullName; }
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+    @Column(nullable = false)
+    private String role = "EMPLOYEE"; // mac dinh khi dang ky la EMPLOYEE
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 }

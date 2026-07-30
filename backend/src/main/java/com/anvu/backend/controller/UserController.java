@@ -30,4 +30,9 @@ public class UserController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
+    @DeleteMapping("/{id}")
+    @org.springframework.security.access.prepost.PreAuthorize("hasRole('ADMIN')")
+    public void delete(@PathVariable Long id) {
+        userRepository.deleteById(id);
+    }
 }

@@ -1,5 +1,5 @@
 package com.anvu.backend.config;
-
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,8 +32,12 @@ public class JwtFilter extends OncePerRequestFilter {
 
             if (jwtUtil.isTokenValid(token)) {
                 String email = jwtUtil.extractEmail(token);
+                String role = jwtUtil.extractRole(token);
                 UsernamePasswordAuthenticationToken auth =
-                        new UsernamePasswordAuthenticationToken(email, null, List.of());
+                        new UsernamePasswordAuthenticationToken(
+                                email, null,
+                                List.of(new SimpleGrantedAuthority("ROLE_" + role))
+                        );
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
         }
