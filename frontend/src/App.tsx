@@ -1,31 +1,29 @@
-import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Login from './pages/Login'
+import Users from './pages/Users'
 
-interface User {
-  id: number
-  email: string
-  fullName: string
+function PrivateRoute({ children }: { children: React.ReactNode }) {
+    const token = localStorage.getItem('token')
+    return token ? <>{children}</> : <Navigate to="/login" />
 }
 
 function App() {
-  const [users, setUsers] = useState<User[]>([])
-
-  useEffect(() => {
-    fetch('http://localhost:8080/api/users')
-      .then((res) => res.json())
-      .then((data) => setUsers(data))
-      .catch((err) => console.error('Loi goi API:', err))
-  }, [])
-
-  return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Danh sach Users</h1>
-      <ul>
-        {users.map((u) => (
-          <li key={u.id}>{u.fullName} - {u.email}</li>
-        ))}
-      </ul>
-    </div>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route
+                    path="/users"
+                    element={
+                        <PrivateRoute>
+                            <Users />
+                        </PrivateRoute>
+                    }
+                />
+                <Route path="*" element={<Navigate to="/login" />} />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default App
