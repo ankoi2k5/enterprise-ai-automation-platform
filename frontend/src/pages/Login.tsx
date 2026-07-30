@@ -14,6 +14,7 @@ function Login() {
             const res = await api.post('/auth/login', { email, password })
             localStorage.setItem('token', res.data.token)
             localStorage.setItem('fullName', res.data.fullName)
+            localStorage.setItem('role', res.data.role)
             navigate('/users')
         } catch (err) {
             setError('Sai email hoac mat khau')
