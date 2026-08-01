@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
 import Users from './pages/Users'
 import Chat from './pages/Chat'
+import Documents from './pages/Documents'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
     const token = localStorage.getItem('token')
@@ -27,6 +28,14 @@ function App() {
                     element={
                         <PrivateRoute>
                             <Chat />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/documents"
+                    element={
+                        <PrivateRoute>
+                            <Documents />
                         </PrivateRoute>
                     }
                 />

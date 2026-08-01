@@ -50,6 +50,9 @@ function Users() {
                     <button onClick={() => navigate('/chat')} className="bg-green-600 text-white px-4 py-2 rounded">
                         Chat AI
                     </button>
+                    <button onClick={() => navigate('/documents')} className="bg-purple-600 text-white px-4 py-2 rounded">
+                        Tai lieu
+                    </button>
                     <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded">
                         Dang xuat
                     </button>

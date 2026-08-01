@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import api from '../api'
+import { useNavigate } from 'react-router-dom'
 
 interface Message {
     role: 'user' | 'ai'
@@ -10,7 +11,9 @@ function Chat() {
     const [messages, setMessages] = useState<Message[]>([])
     const [input, setInput] = useState('')
     const [loading, setLoading] = useState(false)
+    const [useRag, setUseRag] = useState(true) // mac dinh bat RAG
     const bottomRef = useRef<HTMLDivElement>(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -24,7 +27,8 @@ function Chat() {
         setLoading(true)
 
         try {
-            const res = await api.post('/chat', { message: userMsg.text })
+            const endpoint = useRag ? '/chat/rag' : '/chat'
+            const res = await api.post(endpoint, { message: userMsg.text })
             setMessages((prev) => [...prev, { role: 'ai', text: res.data.reply }])
         } catch (err) {
             setMessages((prev) => [...prev, { role: 'ai', text: 'Loi: khong the ket noi AI' }])
@@ -42,7 +46,18 @@ function Chat() {
 
     return (
         <div className="flex flex-col h-screen p-4 max-w-2xl mx-auto">
-            <h1 className="text-xl font-bold mb-4">Chat AI</h1>
+            <div className="flex justify-between items-center mb-4">
+                <h1 className="text-xl font-bold">Chat AI</h1>
+                <div className="flex items-center gap-4">
+                    <label className="flex items-center gap-2 text-sm">
+                        <input type="checkbox" checked={useRag} onChange={(e) => setUseRag(e.target.checked)} />
+                        Dung tai lieu (RAG)
+                    </label>
+                    <button onClick={() => navigate('/documents')} className="text-sm text-purple-600 hover:underline">
+                        Quan ly tai lieu
+                    </button>
+                </div>
+            </div>
             <div className="flex-1 overflow-y-auto border rounded p-4 mb-4 space-y-3 bg-gray-50">
                 {messages.map((m, i) => (
                     <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
