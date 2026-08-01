@@ -1,0 +1,11 @@
+CÔNG TY CỔ PHẦN CÔNG NGHỆ ANVUX
+
+Quy trình xử lý yêu cầu khách hàng tại Công ty Cổ phần Công nghệ ANVUX được xây dựng nhằm đảm bảo mọi yêu cầu đều được tiếp nhận, phân loại và xử lý nhanh chóng, chính xác. Khi khách hàng gửi yêu cầu thông qua website, email hoặc điện thoại, hệ thống sẽ tự động ghi nhận thông tin vào cơ sở dữ liệu và tạo một mã yêu cầu duy nhất để thuận tiện cho việc theo dõi.
+
+Bộ phận Chăm sóc khách hàng là đơn vị đầu tiên tiếp nhận thông tin. Nhân viên sẽ kiểm tra tính đầy đủ của yêu cầu, xác minh thông tin khách hàng và phân loại theo từng nhóm như hỗ trợ kỹ thuật, tư vấn sản phẩm, bảo hành hoặc khiếu nại. Đối với các yêu cầu đơn giản, nhân viên sẽ giải quyết ngay trong ngày. Các yêu cầu phức tạp sẽ được chuyển đến bộ phận chuyên môn thông qua hệ thống quản lý công việc nội bộ.
+
+Sau khi nhận được yêu cầu, bộ phận kỹ thuật tiến hành phân tích nguyên nhân, đánh giá mức độ ảnh hưởng và xây dựng phương án xử lý. Trong suốt quá trình thực hiện, mọi thay đổi về trạng thái đều được cập nhật lên hệ thống để khách hàng và các phòng ban liên quan có thể theo dõi. Nếu cần thêm thông tin, nhân viên sẽ chủ động liên hệ với khách hàng để xác nhận trước khi triển khai.
+
+Khi công việc hoàn tất, kết quả sẽ được kiểm tra bởi trưởng nhóm nhằm đảm bảo đáp ứng đúng yêu cầu ban đầu. Sau đó, hệ thống sẽ gửi thông báo hoàn thành đến khách hàng kèm theo hướng dẫn sử dụng hoặc các lưu ý cần thiết nếu có. Khách hàng được khuyến khích đánh giá mức độ hài lòng để doanh nghiệp có cơ sở cải thiện chất lượng dịch vụ.
+
+Định kỳ vào cuối mỗi tuần, phòng Quản lý chất lượng sẽ tổng hợp số lượng yêu cầu đã xử lý, thời gian phản hồi trung bình, tỷ lệ hoàn thành đúng hạn và các phản hồi của khách hàng. Báo cáo được gửi đến Ban Giám đốc để đánh giá hiệu quả hoạt động của từng bộ phận, đồng thời đề xuất các biện pháp tối ưu quy trình. Nhờ quy trình này, Công ty Cổ phần Công nghệ ANVUX luôn duy trì chất lượng dịch vụ ổn định, nâng cao trải nghiệm khách hàng và cải thiện hiệu suất làm việc của toàn doanh nghiệp.

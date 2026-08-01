@@ -12,12 +12,10 @@ public class DocumentChunk {
 
     @Column(nullable = false)
     private Long documentId;
-
-    @Lob
+    
     @Column(columnDefinition = "TEXT")
     private String content;
 
-    @Lob
     @Column(columnDefinition = "TEXT")
     private String embedding; // luu vector duoi dang chuoi so cach nhau boi dau phay
 
