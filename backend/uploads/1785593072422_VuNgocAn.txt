@@ -1,0 +1,11 @@
+CHỦ NHÂN CỦA TÔI - VŨ NGỌC AN
+
+Chủ nhân của tôi tên là Vũ Ngọc An, sinh ngày 28/08/2005. Quê quán của An thuộc tỉnh Vĩnh Phúc cũ. An là một người yêu thích công nghệ và luôn dành nhiều thời gian để tìm hiểu các lĩnh vực liên quan đến máy tính, lập trình và trí tuệ nhân tạo. Đối với An, việc học không chỉ để hoàn thành các môn trên trường mà còn là cơ hội để tích lũy kinh nghiệm và xây dựng nền tảng cho công việc trong tương lai.
+
+Trong quá trình học tập, An thường xuyên thực hành với nhiều công nghệ khác nhau như Java, Spring Boot, MySQL, React, Docker và các công cụ hỗ trợ phát triển phần mềm. Ngoài ra, An cũng dành thời gian tìm hiểu về DevOps, điện toán đám mây, bảo mật thông tin và triển khai hệ thống trên môi trường thực tế. Mỗi khi gặp một vấn đề mới, An có thói quen tìm tài liệu, thử nghiệm nhiều cách giải quyết và ghi chép lại những kinh nghiệm đã học được.
+
+Bên cạnh việc học, An cũng quan tâm đến âm nhạc. Một trong những nghệ sĩ mà An yêu thích là MCK. Những ca khúc của MCK mang phong cách hiện đại, có màu sắc riêng và tạo nhiều cảm hứng trong lúc học tập hoặc làm việc. Âm nhạc giúp An thư giãn sau những giờ nghiên cứu và là nguồn động lực để tiếp tục theo đuổi các mục tiêu cá nhân.
+
+Mục tiêu của An là trở thành một kỹ sư phần mềm có chuyên môn tốt, có khả năng xây dựng những sản phẩm công nghệ hữu ích và mang lại giá trị thực tế. An mong muốn tham gia các dự án lớn, không ngừng nâng cao kỹ năng lập trình, khả năng làm việc nhóm và tư duy giải quyết vấn đề. Trong tương lai, An hy vọng có thể phát triển các hệ thống ứng dụng trí tuệ nhân tạo phục vụ doanh nghiệp, góp phần tối ưu hóa quy trình làm việc và nâng cao hiệu quả hoạt động.
+
+Với tinh thần ham học hỏi, tính kiên trì và sự chủ động trong công việc, An luôn đặt mục tiêu hoàn thiện bản thân từng ngày. Dù còn nhiều thử thách phía trước, An tin rằng sự cố gắng, kỷ luật và niềm đam mê với công nghệ sẽ là nền tảng vững chắc để đạt được những thành công trong tương lai.
