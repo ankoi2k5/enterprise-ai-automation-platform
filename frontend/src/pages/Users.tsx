@@ -53,6 +53,11 @@ function Users() {
                     <button onClick={() => navigate('/documents')} className="bg-purple-600 text-white px-4 py-2 rounded">
                         Tai lieu
                     </button>
+                    {isAdmin && (
+                        <button onClick={() => navigate('/reports')} className="bg-indigo-600 text-white px-4 py-2 rounded">
+                            Bao cao
+                        </button>
+                    )}
                     <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded">
                         Dang xuat
                     </button>

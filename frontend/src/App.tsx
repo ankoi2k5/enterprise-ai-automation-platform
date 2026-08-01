@@ -3,6 +3,7 @@ import Login from './pages/Login'
 import Users from './pages/Users'
 import Chat from './pages/Chat'
 import Documents from './pages/Documents'
+import Reports from './pages/Reports'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
     const token = localStorage.getItem('token')
@@ -36,6 +37,14 @@ function App() {
                     element={
                         <PrivateRoute>
                             <Documents />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/reports"
+                    element={
+                        <PrivateRoute>
+                            <Reports />
                         </PrivateRoute>
                     }
                 />
