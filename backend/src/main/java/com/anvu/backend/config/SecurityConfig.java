@@ -32,6 +32,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()  // dang ky/dang nhap - mo cong khai
+                        .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated()                  // con lai - bat buoc dang nhap
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
