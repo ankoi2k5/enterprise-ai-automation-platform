@@ -4,6 +4,7 @@ import Users from './pages/Users'
 import Chat from './pages/Chat'
 import Documents from './pages/Documents'
 import Reports from './pages/Reports'
+import EmailAgent from './pages/EmailAgent'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
     const token = localStorage.getItem('token')
@@ -48,6 +49,7 @@ function App() {
                         </PrivateRoute>
                     }
                 />
+                <Route path="/email" element={<PrivateRoute><EmailAgent /></PrivateRoute>} />
             </Routes>
         </BrowserRouter>
     )

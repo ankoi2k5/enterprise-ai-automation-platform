@@ -58,6 +58,9 @@ function Users() {
                             Bao cao
                         </button>
                     )}
+                    <button onClick={() => navigate('/email')} className="bg-orange-500 text-white px-4 py-2 rounded">
+                        Email Agent
+                    </button>
                     <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded">
                         Dang xuat
                     </button>
